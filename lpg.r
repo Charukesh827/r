@@ -14,7 +14,7 @@ x <- seq(0, 10, length.out = 100)
 df <- data.frame(x = x, y1 = f1(x), y2 = f2(x))
 # Plot the inequalities and shade the regions bounded by them
 ggplot(df, aes(x = x)) +
-  geom_ribbon(aes(ymin = y1, ymax = Inf), fill = "red", alpha = 0.3) +
+  geom_ribbon(aes(ymin = -Inf, ymax = y1), fill = "red", alpha = 0.3) +
   geom_ribbon(aes(ymin = -Inf, ymax = y2), fill = "green", alpha = 0.3) +
   geom_line(aes(y = y1), colour = "red") +
   geom_line(aes(y = y2), colour = "green") +
