@@ -1,5 +1,12 @@
-x<- matrix(as.integer(scan("DUU_data.txt",'r'))
-           ,nrow=4,byrow=TRUE)
+x<- matrix(as.integer(scan("DUU_data.txt",'r')),nrow=3,byrow=TRUE)
+
+choies<-readline("Enter the option (0: payoff , 1: cost): ")
+
+choies<-as.integer(choies)
+
+if(!choies){
+  x<-x*-1 
+}
 
 mini<-which.min(rowMeans(x))
 

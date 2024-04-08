@@ -1,7 +1,7 @@
 library(lpSolve)
-r<- c(14,47,31)
-w<-c(1,3,2)
-W<-4
+r<- c(47,31,14)
+w<-c(3,2,1)
+W<-5
 
 m<-sapply(w,function(w) floor(W/w))
 
@@ -42,7 +42,7 @@ nw<-0
 cat("Final pic is: ")
 for (i in length(w):1) {
   if(i==length(w)){
-    cat(" ",mm[i,which.max(f[i,])]," ")
+    cat("\n",i," : ",mm[i,which.max(f[i,])]," \n")
     cx<-which.max(f[i,])-1
     cw<-w[i]
     cm<-mm[i,which.max(f[i,])]
@@ -51,7 +51,7 @@ for (i in length(w):1) {
     nw<-cw
   }
   else{
-    cat(mm[i,cx-cw*cm+1]," ")
+    cat(i," : ",mm[i,cx-cw*cm+1]," \n")
     cx<-nx-nw*nm
     cw<-w[i]
     cm<-mm[i,nx-nw*nm+1]
